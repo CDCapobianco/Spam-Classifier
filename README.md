@@ -181,14 +181,21 @@ this service.
 
 # Parsing and Preprocessing
 
-A first attempt of parsing involved the use of a complex regex function, but then it was replaced with email.parser class from email python library which allows to extract the body of the mail from the corpus of each message.
+A first attempt of parsing involved the use of a complex regex function, but then it was replaced with email.parser class from email python library which allows to extract the body of the mail from the corpus of each message more efficiently.
 
 For what regards preprocessing, the parsed body of each mail gets stripped of punctuation and numbers and then, with spaCy library, it gets cleaned of stopwords, tokenized and lemmatized.
 
 
-# The model
+# The Model
 
 Three ML models were considered for this task. 
+
 The first one is a typical logistic regression which correctly classified 95.5% of the test set, with a F1 Score of 92.5%
-The second one is a SVM Classifier, fine tuned with a grid search technique, which correctly classified 97.8% of the test set, with a F1 Score of 
-The last one is a XGBoost Classifier, fine tuned with a grid search technique (100 estimators), which correctly classified 95.8% of the test set, with a F1 Score of
+The second one is a SVM Classifier, fine tuned with a grid search technique, which correctly classified 97.6% of the test set, with a F1 Score of 96.3%
+The last one is a XGBoost Classifier, fine tuned with a grid search technique (400 estimators), which correctly classified 98.1% of the test set, with a F1 Score of 97%
+
+| Model  | Test Performance (Accuracy) | Test Performance (F1 Score) |
+| ------------- | ------------- | ------------- |
+| Logistic Regression  | 95.5 %  | 92.5%  |
+| SVM | 97.6%  | 96.3% |
+| XGBoost | 98.1% | 97% |
