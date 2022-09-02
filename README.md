@@ -1,4 +1,4 @@
-# Spam-Classifier
+# Spam Classifier
 A Spam Classifier built with ML techniques, based on Apache SpamAssassin public corpus. The objective is to build a system which can classify a mail message as spam simply by analyzing the text.
 
 
